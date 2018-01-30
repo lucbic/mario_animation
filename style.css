@@ -88,12 +88,8 @@ hr {
   top: -25%;
   left: 0px;
   z-index: 1;
-  animation-name: drive;
-  animation-duration: 5s;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: drive 5s linear infinite normal,
+             jump 0.5s 3s ease;
 }
 
 .luigi {
@@ -101,12 +97,7 @@ hr {
   top: 0%;
   left: 0px;
   z-index: 2;
-  animation-name: drive;
-  animation-duration: 3s;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: drive 3s linear infinite normal;
 }
 
 .shake {
@@ -126,8 +117,14 @@ hr {
 }
 
 @keyframes shake {
-  from { transform: translateY(0) }
+  from { transform: translateY(0px) }
   to { transform: translateY(2px) }
+}
+
+@keyframes jump {
+  0% { top: -25% }
+  50% { top: -50% }
+  100% { top: -25% }
 }
 
 @keyframes wind {
